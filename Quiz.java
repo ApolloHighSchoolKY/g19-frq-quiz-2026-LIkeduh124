@@ -3,12 +3,14 @@ public static String scrambleWord(String word){
   String result = "";
   for(int pos = 0; pos<word.length(); pos++)
   {
-    
     if((word.charAt(pos)=='A')&&(pos != word.length()-1))
     {
-      result += word.charAt(pos+1);
-      result += 'A';
-      pos++;
+      if(word.charAt(pos+1)!='A')
+      {
+        result += word.charAt(pos+1);
+        result += 'A';
+        pos++;
+      }
     }
     else
     {
